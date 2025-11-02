@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci ! - GlowCast Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: darkorchid;
+            --dark-magenta: darkmagenta;
+            --white: #ffffff;
+            --gray-text: #444;
+            --light-gray: #666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--gray-text);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(153, 50, 204, 0.05) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(153, 50, 204, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-magenta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease 0.3s backwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .check-icon::before {
+            content: '✓';
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .info-box {
+            background: rgba(153, 50, 204, 0.05);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-purple);
+            text-align: left;
+            animation: fadeInUp 0.8s ease 0.8s backwards;
+        }
+
+        .info-box p {
+            margin-bottom: 0.5rem;
+            color: var(--gray-text);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            color: var(--primary-purple);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 1s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary-purple);
+            color: white;
+            box-shadow: 0 4px 15px rgba(153, 50, 204, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153, 50, 204, 0.4);
+            background: var(--dark-magenta);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease 1.2s backwards;
+        }
+
+        .social-links p {
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .social-icon.tiktok {
+            background: #000000;
+            color: white;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        .countdown span {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 3rem 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .message {
+                font-size: 1.1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="check-icon"></div>
+        
+        <h1 id="pageTitle">Merci !</h1>
+        
+        <p class="message" id="pageMessage">
+            Votre message a bien été envoyé. Notre équipe vous répondra dans les plus brefs délais.
+        </p>
+
+        <div class="info-box" id="infoBox">
+            <p><strong>📧 Prochaines étapes :</strong></p>
+            <p>• Nous analysons votre demande</p>
+            <p>• Vous recevrez une réponse sous 24-48h</p>
+            <p>• Vérifiez vos spams si besoin</p>
+        </div>
+
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">
+                🏠 Retour à l'accueil
+            </a>
+            <a href="index.html#videos" class="btn btn-secondary">
+                🎬 Voir nos vidéos
+            </a>
+        </div>
+
+        <div class="social-links">
+            <p>Suivez-nous sur les réseaux sociaux</p>
+            <div class="social-icons">
+                <a href="https://wa.me/22990000000" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                    💬
+                </a>
+                <a href="https://www.instagram.com/glowcast_agency?igsh=eHRubnllY2ZlOWZy&utm_source=qr" target="_blank" class="social-icon instagram" title="Instagram">
+                    📷
+                </a>
+            </div>
+        </div>
+
+        <div class="countdown">
+            Redirection automatique dans <span id="countdown">10</span> secondes...
+        </div>
+    </div>
+
+    <script>
+        // Détection du type de formulaire via URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const formType = urlParams.get('form') || 'default';
+
+        const pageTitle = document.getElementById('pageTitle');
+        const pageMessage = document.getElementById('pageMessage');
+        const infoBox = document.getElementById('infoBox');
+
+        // Personnalisation selon le type de formulaire
+        if (formType === 'newsletter') {
+            pageTitle.textContent = 'Bienvenue dans la communauté !';
+            pageMessage.textContent = 'Vous êtes maintenant inscrit(e) à notre newsletter. Vous recevrez nos dernières créations et offres exclusives directement dans votre boîte mail.';
+            infoBox.innerHTML = `
+                <p><strong>🎉 Ce que vous recevrez :</strong></p>
+                <p>• Nos dernières créations UGC</p>
+                <p>• Des offres exclusives réservées aux abonnés</p>
+                <p>• Des conseils et tendances UGC</p>
+            `;
+        } else if (formType === 'pack') {
+            pageTitle.textContent = 'Demande reçue !';
+            pageMessage.textContent = 'Votre demande de pack a bien été enregistrée. Un membre de notre équipe reviendra vers vous très prochainement pour discuter de votre projet.';
+            infoBox.innerHTML = `
+                <p><strong>📋 Prochaines étapes :</strong></p>
+                <p>• Analyse de votre projet (sous 24h)</p>
+                <p>• Appel ou échange par email</p>
+                <p>• Proposition personnalisée</p>
+            `;
+        }
+
+        // Compte à rebours et redirection
+        let seconds = 10;
+        const countdownEl = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+
+        // Possibilité d'annuler la redirection en interagissant avec la page
+        let userInteracted = false;
+        document.querySelectorAll('.btn, .social-icon').forEach(el => {
+            el.addEventListener('click', () => {
+                clearInterval(countdownInterval);
+                userInteracted = true;
+            });
+        });
+    </script>
+</body>
+</html>
